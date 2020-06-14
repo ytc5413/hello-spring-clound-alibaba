@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?><!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" ><!--一个mapper对应一个数据库-->
+<mapper namespace="com.yetc.cloudproviderpayment8001.mysql.mapper.CloudOrderMapper">
+
+
+    <insert id="saveOrder" parameterType="CloudUser" useGeneratedKeys="true" keyProperty="id">
+        insert into cloud_order(order_no) values (#{order_no})
+    </insert>
+
+</mapper>

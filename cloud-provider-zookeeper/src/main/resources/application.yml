@@ -1,0 +1,8 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: cloud-provider-zookeeper
+  cloud:
+    zookeeper:
+      connect-string: 192.168.239.132:2181
