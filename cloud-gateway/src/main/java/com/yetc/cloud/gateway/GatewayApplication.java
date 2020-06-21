@@ -1,17 +1,20 @@
-package com.yetc.cloudproviderpayment8001;
+package com.yetc.cloud.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
-@EnableDiscoveryClient
+/**
+ * @author : yetc
+ * @date : 2020/6/19 21:04
+ */
 @SpringBootApplication
+@EnableDiscoveryClient
 @EnableFeignClients
-public class CloudProviderPayment8001Application {
+public class GatewayApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CloudProviderPayment8001Application.class, args);
+        SpringApplication.run(GatewayApplication.class,args);
     }
-
 }

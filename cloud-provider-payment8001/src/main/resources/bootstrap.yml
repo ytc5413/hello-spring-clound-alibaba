@@ -1,0 +1,19 @@
+server:
+  port: 8001
+spring:
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.239.132:8848
+        file-extension: yaml
+        prefix: cloud-provider-order-8801
+    sentinel:
+      transport:
+        dashboard: 192.168.239.132:8888
+
+# 开启熔断
+feign:
+  sentinel:
+    enabled: true

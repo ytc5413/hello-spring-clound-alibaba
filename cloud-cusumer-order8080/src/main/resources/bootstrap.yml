@@ -1,0 +1,15 @@
+server:
+  port: 80
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name=cloud-consumer-order: cloud-consumer-order
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.239.132:8848
+        file-extension: yaml
+        group: DEFAULT_GROUP
+        prefix: cloud-consumer-order

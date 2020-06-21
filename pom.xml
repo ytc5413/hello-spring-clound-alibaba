@@ -18,6 +18,7 @@
         <module>cloud-api-common</module>
         <module>cloud-provider-zookeeper</module>
         <module>cloud-consumer-zookeeper</module>
+        <module>cloud-gateway</module>
     </modules>
     <packaging>pom</packaging>
 

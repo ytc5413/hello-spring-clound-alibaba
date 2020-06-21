@@ -1,0 +1,36 @@
+server:
+  port: 9000
+spring:
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.239.132:8848
+        file-extension: yaml
+        prefix: cloud-gateway
+    gateway:
+      #设置与服务注册发现组件结合，这样可以采用服务名的路由策略
+      discovery:
+        locator:
+          lower-case-service-id: true
+          enabled: true
+      routes:
+        - id: payment_route # 路由的id,没有规定规则但要求唯一,建议配合服务名
+          #匹配后提供服务的路由地址
+#          uri: http://localhost:8001
+          uri: lb://cloud-payment
+          predicates:
+            - Path=/pro/** # 断言，路径相匹配的进行路由
+          filters:
+            - RewritePath=/pro/(?<segment>.*), /$\{segment}
+    sentinel:
+      transport:
+        dashboard: 192.168.239.132:8888
+# 配置日志级别，方别调试
+logging:
+  level:
+    org.springframework.cloud.gateway: debug
+feign:
+  sentinel:
+    enabled: true
